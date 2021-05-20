@@ -1,0 +1,14 @@
+<div class="list-grid">
+    <div class="list-grid__img-box">
+        <!-- imagen que viene del servicio -->
+        <img [src]="data.picture"  alt=""/>
+    </div>
+    <div class="list-grid__text-box">
+        <!-- valor que recibo | pipe -->
+        <span>{{data.price.currency}}{{data.price.amount}}</span>
+        <h1>{{data.title}}</h1>
+    </div>
+    <div>
+        ciudad
+    </div>
+</div>

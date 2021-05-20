@@ -1,0 +1,21 @@
+.list-grid {
+  background-color: #ffff;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  width: calc(100% - 200px);
+  height: 120px;
+  margin: 0 auto;
+  &__text-box {
+      padding: 10px;
+  }
+  h1 {
+      font-size: 0.8rem;
+      padding: 10px 0;
+  }
+  &__img-box {
+    img {
+      width: 100%;
+    }
+  }
+}
