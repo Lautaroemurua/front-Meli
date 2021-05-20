@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SearchPageService } from '../../services/search-page.service';
 
 @Component({
   selector: 'app-list',
@@ -7,6 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class ListComponent {
     @Input() data:any;
-  constructor() { }
+  constructor(private searchService: SearchPageService) { }
+
+  showDetails(id: string) {
+    const response = this.searchService.searchById(id);
+    console.log(response);
+  }
 
 }

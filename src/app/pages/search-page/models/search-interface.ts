@@ -1,4 +1,4 @@
-import { Items } from "./items-interface";
+import { Item } from "./item-interface";
 
 export interface Search {
     author: {
@@ -6,5 +6,5 @@ export interface Search {
       lastname: string;
     },
     categories: string[];
-    item: Items[];
+    item: Item[];
   }
