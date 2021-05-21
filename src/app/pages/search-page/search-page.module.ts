@@ -5,16 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ListComponent } from './components/list/list.component';
 import { SearchPageComponent } from './search-page.component';
 import { SearchPageRoutingModule } from './search-page.routing.module';
-import { SearchPageService } from './services/search-page.service';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
-    SearchPageComponent, ListComponent
+    SearchPageComponent, ListComponent, DetailsComponent
   ],
   imports: [
     BrowserModule,
     SearchPageRoutingModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class SearchPageModule { }

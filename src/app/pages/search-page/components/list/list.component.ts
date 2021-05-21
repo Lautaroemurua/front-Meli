@@ -8,11 +8,15 @@ import { SearchPageService } from '../../services/search-page.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-    @Input() data:any;
-  constructor(private searchService: SearchPageService, public router : Router) { }
+  @Input() data: any;
+  constructor(public router: Router) { }
 
   showDetails(id: string) {
-
+    this.router.navigate(['search/item'], {
+      queryParams: {
+        id
+      }
+    })
   }
 
 }

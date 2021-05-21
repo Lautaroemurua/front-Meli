@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Items } from '../models/items-interface';
 import { Search } from '../models/search-interface';
 import { Item } from '../models/item-interface';
 
