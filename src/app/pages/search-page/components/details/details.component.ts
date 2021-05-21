@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from '../../models/item-interface';
+import { map } from 'rxjs/operators';
+
 import { SearchPageService } from '../../services/search-page.service';
 
 @Component({
@@ -9,15 +10,21 @@ import { SearchPageService } from '../../services/search-page.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  detalles: Item[] | undefined;
+  detalles: any;
+  picture: any;
 
   constructor(private searchService: SearchPageService, private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
       const id = params.get('id') || 'No existe id';
+      this.detalles = this.searchService.searchById(id)
       this.searchService.searchById(id).subscribe(res => {
+        
         this.detalles = res;
       });
+      this.picture = this.searchService.searchById(id).pipe(map(res=> {
+        return res.item.picture;
+      }))
     });
   }
 }

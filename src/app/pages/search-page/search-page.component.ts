@@ -12,12 +12,12 @@ import { SearchPageService } from './services/search-page.service';
 export class SearchPageComponent implements OnInit {
   search = '';
   items: Observable<any> | undefined;
-  errorMessage:any = undefined;
+  errorMessage: any = undefined;
   constructor(public searchService: SearchPageService) { }
-  ngOnInit(){
+  ngOnInit() {
   }
   onSubmit() {
-    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => res),catchError((err: HttpErrorResponse)=>{
+    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => { return res }), catchError((err: HttpErrorResponse) => {
       this.errorMessage = err;
       return throwError(err);
     }));

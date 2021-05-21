@@ -1,10 +1,20 @@
-import { Item } from "./item-interface";
+export interface SearchInterface {
+  author: {
+    name: string;
+    lastname: string;
+  },
+  item: Item[];
+}
 
-export interface Search {
-    author: {
-      name: string;
-      lastname: string;
-    },
-    categories: string[];
-    item: Item[];
+  export interface Item {
+    id: string;
+    title: string;
+    price: {
+      currency: string;
+      amount: number;
+      decimals: number;
+    }
+    picture: string;
+    condition: string;
+    free_shipping: boolean;
   }

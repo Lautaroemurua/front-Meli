@@ -1,11 +1,11 @@
-<div class="list-grid">
+<div class="list-grid" *ngIf="detalles | async">
     <div>
         <!-- imagen que viene del servicio -->
-        <img src=""  alt=""/>
+        <img [src]="picture | async"  alt="Imagen Detalles"/>
     </div>
     <div class="list-grid__text-box">
         <!-- valor que recibo | pipe -->
-        <span>{{detalles | json}}</span>
+        <span>alo</span>
         <h1>nombre de producto</h1>
     </div>
     <div>
