@@ -21,11 +21,9 @@ export class SearchPageService {
 
   searchById(id: string): Observable<Item[]> {
     const url = `http://localhost:3002/items/${id}`;
-    const response1 = this.http.get<Search>(url).pipe(map(res => res.item));
-    const response2 = this.http.get<Search>(`${url}/description`).pipe(map(res => res.item));
-    console.log(response1);
-    console.log(response2);
-    return response1;
+    const response = this.http.get<Search>(url).pipe(map(res => res.item));
+
+    return response;
   }
 
 }

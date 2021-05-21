@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { SearchPageService } from '../../services/search-page.service';
 
 @Component({
@@ -8,11 +9,10 @@ import { SearchPageService } from '../../services/search-page.service';
 })
 export class ListComponent {
     @Input() data:any;
-  constructor(private searchService: SearchPageService) { }
+  constructor(private searchService: SearchPageService, public router : Router) { }
 
   showDetails(id: string) {
-    const response = this.searchService.searchById(id);
-    console.log(response);
+
   }
 
 }
