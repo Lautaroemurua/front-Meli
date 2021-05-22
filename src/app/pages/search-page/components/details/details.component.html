@@ -1,14 +1,14 @@
-<div class="list-grid" *ngIf="detalles | async">
-    <div>
-        <!-- imagen que viene del servicio -->
-        <img [src]="picture | async"  alt="Imagen Detalles"/>
+<ng-container *ngIf="detalles | async">
+    <div class="list-grid">
+        <div>
+            <img [src]="picture | async" alt="Imagen Detalles" />
+        </div>
+        <div class="list-grid__text-box">
+            <span>titulaso</span>
+            <h1>nombre de producto</h1>
+        </div>
+        <div>
+            ciudad
+        </div>
     </div>
-    <div class="list-grid__text-box">
-        <!-- valor que recibo | pipe -->
-        <span>alo</span>
-        <h1>nombre de producto</h1>
-    </div>
-    <div>
-        ciudad
-    </div>
-</div>
+</ng-container>

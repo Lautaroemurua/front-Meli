@@ -5,6 +5,7 @@ export interface FindInterface {
     name: string,
     lastname: string
   },
+  picture: string,
   item: {
     id: string, title: string,
     price: {
@@ -12,7 +13,6 @@ export interface FindInterface {
       amount: number,
       decimals: number,
     },
-    picture: string,
     condition: string,
     free_shipping: Boolean,
     sold_quantity: number
