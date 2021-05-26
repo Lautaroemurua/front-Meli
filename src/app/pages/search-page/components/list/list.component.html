@@ -1,14 +1,15 @@
 <div class="list-grid" (click)="showDetails(data.id)">
-    <div class="list-grid__img-box">
-        <!-- imagen que viene del servicio -->
-        <img [src]="data.picture"  alt=""/>
-    </div>
-    <div class="list-grid__text-box">
-        <!-- valor que recibo | pipe -->
-        <span>{{data.price.amount | currency}}</span>
-        <h1>{{data.title}}</h1>
-    </div>
+  <div class="list-grid__img-box">
+    <!-- imagen que viene del servicio -->
+    <img [src]="data.picture" alt="" />
+  </div>
+  <div class="list-grid__text-box">
+    <!-- valor que recibo | pipe -->
     <div>
-        ciudad
+      <span>{{data.price.amount | currency}}</span>
+      <img *ngIf="data.free_shipping" class="free-shipping"
+        src="https://img.icons8.com/emoji/50/000000/green-circle-emoji.png" />
     </div>
+    <h2>{{data.title}}</h2>
+  </div>
 </div>
