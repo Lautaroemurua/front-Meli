@@ -6,10 +6,13 @@
         </div>
         <div class="list-grid__text-box">
             <span>{{obj.item.title}}</span>
-            <h1>nombre de producto</h1>
+            <h1>{{obj.item.price.amount | currency}}</h1>
         </div>
-        <div>
-            ciudad
-        </div>
+    </div>
+    <div>
+        <h2>Descripcion del producto</h2>
+    </div>
+    <div>
+        <p>{{obj.description}}</p>
     </div>
 </ng-container>

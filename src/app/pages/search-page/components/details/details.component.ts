@@ -25,10 +25,9 @@ export class DetailsComponent implements OnInit {
       this.detalles = this.searchService.searchById(id)
       this.searchService.searchById(id).pipe(map(res=> {
         this.detailsObj = res
-        console.log(res);
         return this.detailsObj
       }))
-      
+
     });
   }
 }

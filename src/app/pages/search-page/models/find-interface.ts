@@ -16,7 +16,7 @@ export interface FindInterface {
     condition: string,
     free_shipping: Boolean,
     sold_quantity: number
-    description: string
-  }
+  },
+  description: string
 }
 
