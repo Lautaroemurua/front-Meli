@@ -4,8 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { FindInterface } from '../../models/find-interface';
-import { Item } from '../../models/search-interface';
-
 import { SearchPageService } from '../../services/search-page.service';
 
 @Component({

@@ -6,10 +6,11 @@ import { ListComponent } from './components/list/list.component';
 import { SearchPageComponent } from './search-page.component';
 import { SearchPageRoutingModule } from './search-page.routing.module';
 import { DetailsComponent } from './components/details/details.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    SearchPageComponent, ListComponent, DetailsComponent
+    SearchPageComponent, ListComponent, DetailsComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
