@@ -1,7 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { FindInterface } from '../../models/find-interface';
 import { Item } from '../../models/search-interface';
 
@@ -17,7 +18,9 @@ export class DetailsComponent implements OnInit {
   picture: Observable<string> | undefined;
 
   detailsObj:FindInterface | undefined;
-
+  search = '';
+  items: Observable<any> | undefined;
+  errorMessage: any = undefined;
   constructor(private searchService: SearchPageService, private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
@@ -29,5 +32,12 @@ export class DetailsComponent implements OnInit {
       }))
 
     });
+  }
+
+  onSubmit() {
+    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => { return res }), catchError((err: HttpErrorResponse) => {
+      this.errorMessage = err;
+      return throwError(err);
+    }));
   }
 }

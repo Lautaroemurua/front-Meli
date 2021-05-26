@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { SearchPageService } from './services/search-page.service';
@@ -9,13 +9,12 @@ import { SearchPageService } from './services/search-page.service';
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.scss']
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
   search = '';
   items: Observable<any> | undefined;
   errorMessage: any = undefined;
   constructor(public searchService: SearchPageService) { }
-  ngOnInit() {
-  }
+
   onSubmit() {
     this.items = this.searchService.searchByTerm(this.search).pipe(map(res => { return res }), catchError((err: HttpErrorResponse) => {
       this.errorMessage = err;
