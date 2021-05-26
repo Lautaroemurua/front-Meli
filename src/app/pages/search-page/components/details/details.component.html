@@ -1,10 +1,11 @@
-<ng-container *ngIf="detalles | async">
+<ng-container *ngIf="(detalles | async) as obj">
+    <pre>{{obj | json}}</pre>
     <div class="list-grid">
         <div>
-            <img [src]="picture | async" alt="Imagen Detalles" />
+            <img [src]="obj.picture" alt="Imagen Detalles" />
         </div>
         <div class="list-grid__text-box">
-            <span>titulaso</span>
+            <span>{{obj.item.title}}</span>
             <h1>nombre de producto</h1>
         </div>
         <div>

@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
         console.log(res);
         return this.detailsObj
       }))
+      
     });
   }
 }
