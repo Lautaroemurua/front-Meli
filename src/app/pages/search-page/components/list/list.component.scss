@@ -1,12 +1,22 @@
 .list-grid {
   background-color: #ffff;
-  padding: 5px;
+  // padding: 5px;
   display: grid;
   grid-template-columns: 120px 1fr 100px;
   width: calc(100% - 200px);
   height: 120px;
   margin: 0 auto;
   cursor: pointer;
+  border-radius: 0;
+  // display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  padding: 20px 50px 20px 0;
+  position: relative;
+  // width: 100%;
+
+  border-bottom: thin solid #eee;
+
   &__text-box {
       padding: 10px 40px;
       font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
@@ -32,7 +42,8 @@
   }
   &__img-box {
     img {
-      width: 100%;
+      width: 120px;
+      height: 120px;
       box-sizing: content-box;
       padding: 0 24px;
     }

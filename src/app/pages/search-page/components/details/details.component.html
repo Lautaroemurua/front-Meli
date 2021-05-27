@@ -1,18 +1,18 @@
 <app-header searchType="detailsPage"></app-header>
 <ng-container *ngIf="(detalles | async) as obj">
-    <div class="list-grid">
-        <div>
-            <img [src]="obj.picture" alt="Imagen Detalles" />
-        </div>
-        <div class="list-grid__text-box">
-            <span>{{obj.item.title}}</span>
-            <h1>{{obj.item.price.amount | currency}}</h1>
-        </div>
+  <div class="details">
+    <div class="imgDetailsContainer">
+      <img [src]="obj.picture" alt="Imagen Detalles" />
     </div>
-    <div>
-        <h2>Descripcion del producto</h2>
+    <div class="details__text-box">
+      <span>{{obj.item.title}}</span>
+      <h1>{{obj.item.price.amount | currency}}</h1>
     </div>
-    <div>
-        <p>{{obj.description}}</p>
-    </div>
+  </div>
+  <div class="details__description">
+    <h2>Descripcion del producto</h2>
+  </div>
+  <div>
+    <p class="descriptionDetailsContainer">{{obj.description}}</p>
+  </div>
 </ng-container>
