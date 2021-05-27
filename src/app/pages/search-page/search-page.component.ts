@@ -1,7 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Item } from './models/search-interface';
 import { SearchPageService } from './services/search-page.service';
 
 @Component({
@@ -11,14 +9,12 @@ import { SearchPageService } from './services/search-page.service';
 })
 export class SearchPageComponent {
   search = '';
-  items: Observable<any> | undefined;
+  items: Item[] | undefined;
   errorMessage: any = undefined;
   constructor(public searchService: SearchPageService) { }
 
-  onSubmit() {
-    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => { return res }), catchError((err: HttpErrorResponse) => {
-      this.errorMessage = err;
-      return throwError(err);
-    }));
+  getResponse(response: Item[]) {
+    this.items = response;
   }
+
 }

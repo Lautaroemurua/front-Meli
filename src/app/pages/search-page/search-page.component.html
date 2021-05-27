@@ -1,14 +1,6 @@
-<header>
-  <img src="assets/icons/logo.png" alt="Logo MercadoLibre">
-  <input type="text" [(ngModel)]="search" placeholder="Nunca dejes de buscar" data-testid="search"
-    aria-label="Caja de texto buscar">
-  <button type="button" data-testid="buttonSearch" aria-label="Botón buscar" (click)="onSubmit()">
-    <img src="assets/icons/search.svg" alt="Icono buscar">
-  </button>
-</header>
-
-<div class="container-item" *ngIf="items | async">
-  <section *ngFor="let item of items | async">
+<app-header [searchType]="'searchPage'"(valueResponse)="getResponse($event)"></app-header>
+<div class="container-item" *ngIf="items">
+  <section *ngFor="let item of items">
     <app-list [data]="item"></app-list>
   </section>
 </div>

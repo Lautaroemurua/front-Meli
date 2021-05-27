@@ -13,7 +13,7 @@ export class SearchPageService {
 
   constructor(private http: HttpClient) { }
 
-  searchByTerm(term: string): Observable<Item[]> {
+  searchByTerm(term: string | undefined): Observable<Item[]> {
     const url = `http://localhost:3002/items?search=${term}`;
     const response = this.http.get<SearchInterface>(url).pipe(map(res => {
       return res.item

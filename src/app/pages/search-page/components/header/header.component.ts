@@ -1,8 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, take, tap } from 'rxjs/operators';
+import { Item } from '../../models/search-interface';
 import { SearchPageService } from '../../services/search-page.service';
 
 @Component({
@@ -12,17 +12,19 @@ import { SearchPageService } from '../../services/search-page.service';
 })
 
 export class HeaderComponent {
-  @Input() searchType: string | undefined
   search: string = '';
-  items: Observable<any> | undefined;
   errorMessage: any;
+  @Input() searchType: string | undefined;
+  @Output() valueResponse: EventEmitter<Item[]> = new EventEmitter();
+
   constructor(private searchService: SearchPageService, private router: Router) { }
   onSubmit() {
-    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => {
-      return res
-    }), catchError((err: HttpErrorResponse) => {
-      this.errorMessage = err;
-      return throwError(err);
-    }));
+    if (this.searchType === 'detailsPage') {
+      this.router.navigate(['/'], { queryParams: { search: this.search } });
+    } else {
+      this.searchService.searchByTerm(this.search).pipe(take(1)).subscribe(res => {
+        this.valueResponse.emit(res);
+      });
+    }
   }
 }
