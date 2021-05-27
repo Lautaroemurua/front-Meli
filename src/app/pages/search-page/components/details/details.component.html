@@ -1,20 +1,22 @@
 <app-header searchType="detailsPage"></app-header>
 <ng-container *ngIf="(detalles | async) as obj">
-  <div class="details">
-    <div class="imgDetailsContainer">
-      <img [src]="obj.picture" alt="Imagen Detalles" />
+  <div class="detailsContent">
+    <div class="detailsContent__details">
+      <div class="detailsContent__details__imgDetailsContainer">
+        <img [src]="obj.picture" alt="Imagen Detalles" />
+      </div>
+      <div class="detailsContent__details__container">
+        <span class="detailsContent__details__container__title">{{obj.item.title}}</span>
+        <h1 class="detailsContent__details__price">{{obj.item.price.amount | currency}}</h1>
+        <button type="button" class="detailsContent__details__button"><span class="detailsContent__details__content">Comprar
+            ahora</span></button>
+      </div>
     </div>
-    <div class="details__text-box">
-      <span>{{obj.item.title}}</span>
-      <h1>{{obj.item.price.amount | currency}}</h1>
-      <button type="button" class="details__button"><span class="details__content">Comprar
-          ahora</span></button>
+    <div class="detailsContent__details__title-description">
+      <h2>Descripción</h2>
     </div>
-  </div>
-  <div class="details__title-description">
-    <h2>Descripción</h2>
-  </div>
-  <div class="details__description">
-    <p class="descriptionDetailsContainer">{{obj.description}}</p>
+    <div class="detailsContent__details__description">
+      <p class="detailsContent__details__descriptionDetailsContainer">{{obj.description}}</p>
+    </div>
   </div>
 </ng-container>
