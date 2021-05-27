@@ -7,12 +7,14 @@
     <div class="details__text-box">
       <span>{{obj.item.title}}</span>
       <h1>{{obj.item.price.amount | currency}}</h1>
+      <button type="button" class="details__button"><span class="details__content">Comprar
+          ahora</span></button>
     </div>
   </div>
-  <div class="details__description">
-    <h2>Descripcion del producto</h2>
+  <div class="details__title-description">
+    <h2>Descripción</h2>
   </div>
-  <div>
+  <div class="details__description">
     <p class="descriptionDetailsContainer">{{obj.description}}</p>
   </div>
 </ng-container>
