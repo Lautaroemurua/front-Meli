@@ -1,10 +1,10 @@
-Node JS API for MELI
+Angular Web App for MELI
 
-Aplicacion Node Js que expone 2 enpoints: ✌️
+Aplicacion Angular que expone 2 vistas: ✌️
 
-1️⃣ El primero: Devuelve una lista 📋 de items a partir de la busqueda 🔍 de items coincidentes con un queryparams (cadena de texto) recibido.
+1️⃣ La primera: Muestra una lista 📋 de los 4 primeros items a partir de la busqueda ingresada por el input 🔍
 
-2️⃣ El segundo: devuelve la informacion de un item ☝️ en paritcular a partir de su id el cual se recibe por parametros
+2️⃣ La segunda: Muestra la informacion  detallada de un item ☝️ en paritcular con su Imagen completa, el titulo, su precio y su disponibilidad de envio gratis en el caso que lo requiera 
 
 Levantando el server... 🚀
 
