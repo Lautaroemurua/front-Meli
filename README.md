@@ -47,6 +47,6 @@ NPM - Manejador de dependencias
 CLEAN ARCHITECTURE - Patron de arquitectura implementado 
 
 
-Autor ✒️ Lautaro Ezequiel Murua - Desarrollo - Investigacion  - Documentación
+Autor ✒️ **Lautaro Ezequiel Murua** - Desarrollo - Investigacion  - Documentación
 
 Espero que lo puedas instalar sin problemas muchas gracias 🎁 🍺 🤓.
