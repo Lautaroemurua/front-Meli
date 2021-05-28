@@ -9,6 +9,8 @@
 </ng-container>
 
 <ng-template #skeleton>
-  <ngx-skeleton *ngFor="let item of counter(4)" height="165px" margin="5px auto" width="calc(100% - 160px)">
-  </ngx-skeleton>
+  <div class="container-item">
+    <ngx-skeleton *ngFor="let item of counter(4)" height="165px" margin="5px auto" width="calc(100% - 170px)">
+    </ngx-skeleton>
+  </div>
 </ng-template>
