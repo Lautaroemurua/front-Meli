@@ -31,9 +31,9 @@ Despliegue 📦: el server se desplegara en el puerto 3002, url ✒️ http://lo
 
 Para correr el proyecto es necesario abrir un terminal en la raiz y escribir los suiguientes comandos:
 
-:one: npm i
+:one: ```npm i```
 
-:two: ng s
+:two: ```ng s```
 
 
 Construido con: 🛠️
