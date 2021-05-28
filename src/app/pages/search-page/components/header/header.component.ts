@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   errorMessage: any;
   @Input() searchType: string | undefined;
   @Output() termEmit = new EventEmitter<Item[]>();
+  @Output() skeletonEmit = new EventEmitter<boolean>();
+  skeletonStatus: boolean | undefined;
   
   constructor(private searchService: SearchPageService, private router: Router) { }
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class HeaderComponent implements OnInit {
 
   onSubmit() {
     const url = this.router.url;
+    this.emitSkeleton(true);
     this.searchService.searchByTerm(this.search).subscribe(res => {
       this.searchService.setTerm(this.search);
       if (url === '/') {
@@ -36,11 +39,16 @@ export class HeaderComponent implements OnInit {
         this.searchService.setItemData(res)
         this.router.navigate(['/']);
       }
+      this.emitSkeleton(false);
     })
   }
   
   emitValue(items: Item[]) {
     this.termEmit.emit(items);
+  }
+
+  emitSkeleton(status: boolean) {
+    this.skeletonEmit.emit(status);
   }
 
   redirectToHome() {

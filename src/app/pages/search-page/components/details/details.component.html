@@ -1,6 +1,6 @@
-<app-header [searchType]="'detailsPage'"></app-header>
-<ng-container *ngIf="(detalles | async) as obj">
-  <div class="detailsContent">
+<app-header [searchType]="'detailsPage'" (skeletonEmit)="getSkeletonStatus($event)"></app-header>
+<ng-container *ngIf="!isLoading; else skeleton" >
+  <div *ngIf="(detalles | async) as obj" class="detailsContent">
     <div class="detailsContent__details">
       <div class="detailsContent__details__imgDetailsContainer">
         <img [src]="obj.picture" alt="Imagen Detalles" />
@@ -20,3 +20,8 @@
     </div>
   </div>
 </ng-container>
+
+<ng-template #skeleton>
+  <ngx-skeleton height="600px" margin="5px auto" width="calc(100% - 160px)">
+  </ngx-skeleton>
+</ng-template>

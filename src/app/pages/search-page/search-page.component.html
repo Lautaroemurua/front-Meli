@@ -1,6 +1,14 @@
-<app-header [searchType]="'searchPage'"(termEmit)="getResponse($event)"></app-header>
-<div class="container-item" *ngIf="items">
-  <section *ngFor="let item of items">
-    <app-list [data]="item"></app-list>
-  </section>
-</div>
+<app-header [searchType]="'searchPage'"(termEmit)="getResponse($event)" (skeletonEmit)="getSkeletonStatus($event)"></app-header>
+
+<ng-container *ngIf="!isLoading; else skeleton">
+  <div class="container-item" *ngIf="items">
+    <section *ngFor="let item of items">
+      <app-list [data]="item"></app-list>
+    </section>
+  </div>
+</ng-container>
+
+<ng-template #skeleton>
+  <ngx-skeleton *ngFor="let item of counter(4)" height="165px" margin="5px auto" width="calc(100% - 160px)">
+  </ngx-skeleton>
+</ng-template>

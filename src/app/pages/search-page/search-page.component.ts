@@ -13,8 +13,11 @@ export class SearchPageComponent implements OnInit{
   search: string | null | undefined;
   items: Item[] | undefined;
   errorMessage: any = undefined;
+  isLoading = false;
+
   constructor(public searchService: SearchPageService) {
    }
+   
   ngOnInit() {
     try {
       this.getters();
@@ -22,6 +25,11 @@ export class SearchPageComponent implements OnInit{
       return error
     }
   }
+
+  counter(i: number) {
+    return new Array(i)
+  }
+
   getters() {
     this.searchService.getItemData().subscribe(res => {
       this.items = res;
@@ -36,6 +44,10 @@ export class SearchPageComponent implements OnInit{
     this.searchService.searchByTerm(search).pipe(take(1)).subscribe(res => {
       this.items = res
     });
+  }
+
+  getSkeletonStatus(status: boolean) {
+    this.isLoading = status;
   }
 
 }

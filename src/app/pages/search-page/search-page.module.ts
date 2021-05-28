@@ -7,6 +7,7 @@ import { SearchPageComponent } from './search-page.component';
 import { SearchPageRoutingModule } from './search-page.routing.module';
 import { DetailsComponent } from './components/details/details.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NgxSkeletonModule } from 'ngx-skeleton';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     SearchPageRoutingModule,
     FormsModule,
+    NgxSkeletonModule
   ]
 })
 export class SearchPageModule { }
