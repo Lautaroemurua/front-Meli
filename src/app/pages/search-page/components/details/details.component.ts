@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { FindInterface } from '../../models/find-interface';
 import { SearchPageService } from '../../services/search-page.service';
 
@@ -27,7 +27,7 @@ export class DetailsComponent implements OnInit {
       this.detalles = this.searchService.searchById(id)
       this.isLoading = true;
       this.searchService.searchById(id).pipe(take(1)).subscribe(res => {
-        this.detailsObj = res
+        this.detailsObj = res;
         this.isLoading = false;
       });
     });

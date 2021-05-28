@@ -31,16 +31,21 @@ export class HeaderComponent implements OnInit {
   onSubmit() {
     const url = this.router.url;
     this.emitSkeleton(true);
-    this.searchService.searchByTerm(this.search).subscribe(res => {
-      this.searchService.setTerm(this.search);
-      if (url === '/') {
-        this.emitValue(res);
-      } else {
-        this.searchService.setItemData(res)
-        this.router.navigate(['/']);
-      }
-      this.emitSkeleton(false);
-    })
+    try {
+      this.searchService.searchByTerm(this.search).subscribe(res => {
+        this.searchService.setTerm(this.search);
+        if (url === '/') {
+          this.emitValue(res);
+        } else {
+          this.searchService.setItemData(res)
+          this.router.navigate(['/']);
+        }
+        this.emitSkeleton(false);
+      })
+    } catch (error) {
+      alert(error);
+    }
+
   }
   
   emitValue(items: Item[]) {
