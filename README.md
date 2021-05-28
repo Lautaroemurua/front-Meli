@@ -13,7 +13,9 @@ git clone https://github.com/Lautaroemurua/front-Meli.git
 
 👀 Mira Deployment para conocer como desplegar el proyecto.
 
-Pre-requisitos 📋 Para correr el server necesitas tener instalado:
+Pre-requisitos 📋 Para correr el cliente necesitas tener corriendo el backend 🚀. Ver ✒️ https://github.com/Lautaroemurua/api-Meli
+
+Tambien tenes que tener instalado:
 
 🔴 ANGULAR/CLI : CLI de angular para ejecutar los comandos.
 
