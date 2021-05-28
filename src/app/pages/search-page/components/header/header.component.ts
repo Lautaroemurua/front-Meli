@@ -43,4 +43,8 @@ export class HeaderComponent implements OnInit {
     this.termEmit.emit(items);
   }
 
+  redirectToHome() {
+    this.router.navigate(['/']);
+  }
+
 }
