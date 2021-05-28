@@ -21,7 +21,7 @@ Tambien tenes que tener instalado:
 
 Ejemplo de instalación 🔩🔧
 
-npm install -g @angular/cli
+```npm install -g @angular/cli```
 
 Ejecutando las pruebas ⚙️ En desarrollo ... 🔧 🔩
 
