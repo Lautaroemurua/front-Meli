@@ -2,26 +2,24 @@ Angular Web App for MELI
 
 Aplicacion Angular que expone 2 vistas: ✌️
 
-1️⃣ La primera: Muestra una lista 📋 de los 4 primeros items a partir de la busqueda ingresada por el input 🔍
+1️⃣ La primera: Muestra una lista 📋 de los 4 primeros items a partir de la busqueda ingresada por el input 🔍 en dondes se muestra imagen del tamaño thumbnail, titulo, precio, y un icono verde en el caso que tenga envio gratis.
 
-2️⃣ La segunda: Muestra la informacion  detallada de un item ☝️ en paritcular con su Imagen completa, el titulo, su precio y su disponibilidad de envio gratis en el caso que lo requiera 
+2️⃣ La segunda: Muestra la informacion  detallada de un item ☝️ en paritcular con su Imagen completa, el titulo, su precio y su descripcion. 
 
-Levantando el server... 🚀
+Levantando el front... 🚀
 
 Empezemos, para levantar el server en tu maquina local es necesario abrir un terminal 💻 en una ruta de su preferencia y tipear los siguiente comandos para realizar la clonacion: 
-git clone https://github.com/Lautaroemurua/api-Meli.git
+git clone https://github.com/Lautaroemurua/front-Meli.git
 
 👀 Mira Deployment para conocer como desplegar el proyecto.
 
 Pre-requisitos 📋 Para correr el server necesitas tener instalado:
 
-🔴 Node JS : Servidor basado en el lenguaje de programación JavaScript
+🔴 ANGULAR/CLI : CLI de angular para ejecutar los comandos.
 
 Ejemplo de instalación 🔩🔧
 
-Descargalo de acá 👉 https://nodejs.org/es/download/
-
-Te recomiendo bajar la LTS que es la version STABLE 😏 que este disponible en tu plataforma: 💻
+npm install -g @angular/cli
 
 Ejecutando las pruebas ⚙️ En desarrollo ... 🔧 🔩
 
@@ -33,15 +31,14 @@ Para correr el proyecto es necesario abrir un terminal en la raiz y escribir los
 
 :one: npm i
 
-:two: npm run start
-
+:two: ng s
 
 
 Construido con: 🛠️
 
 Visual Code - IDE de desarrollo
 
-Express JS - El framework para la capa de aplicacion utilizado
+Angular 12 - El framework para construir aplicaciones web y mobile
 
 NPM - Manejador de dependencias 
 
