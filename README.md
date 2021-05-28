@@ -1,4 +1,4 @@
-Angular Web App for MELI
+**Angular Web App for MELI**
 
 Aplicacion Angular que expone 2 vistas: ✌️
 
@@ -13,13 +13,15 @@ git clone https://github.com/Lautaroemurua/front-Meli.git
 
 👀 Mira Deployment para conocer como desplegar el proyecto.
 
-Pre-requisitos 📋 Para correr el server necesitas tener instalado:
+Pre-requisitos 📋 Para correr el cliente necesitas tener corriendo el backend 🚀. Ver ✒️ https://github.com/Lautaroemurua/api-Meli
+
+Tambien tenes que tener instalado:
 
 🔴 ANGULAR/CLI : CLI de angular para ejecutar los comandos.
 
 Ejemplo de instalación 🔩🔧
 
-npm install -g @angular/cli
+```npm install -g @angular/cli```
 
 Ejecutando las pruebas ⚙️ En desarrollo ... 🔧 🔩
 
@@ -29,9 +31,9 @@ Despliegue 📦: el server se desplegara en el puerto 3002, url ✒️ http://lo
 
 Para correr el proyecto es necesario abrir un terminal en la raiz y escribir los suiguientes comandos:
 
-:one: npm i
+:one: ```npm i```
 
-:two: ng s
+:two: ```ng s```
 
 
 Construido con: 🛠️
@@ -45,6 +47,6 @@ NPM - Manejador de dependencias
 CLEAN ARCHITECTURE - Patron de arquitectura implementado 
 
 
-Autor ✒️ Lautaro Ezequiel Murua - Desarrollo - Investigacion  - Documentación
+Autor ✒️ **Lautaro Ezequiel Murua** - Desarrollo - Investigacion  - Documentación
 
 Espero que lo puedas instalar sin problemas muchas gracias 🎁 🍺 🤓.
