@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { FindInterface } from '../../models/find-interface';
@@ -19,7 +19,7 @@ export class DetailsComponent implements OnInit {
   search = '';
   items: Observable<any> | undefined;
   errorMessage: any = undefined;
-  constructor(private searchService: SearchPageService, private activatedRoute: ActivatedRoute) { }
+  constructor(private searchService: SearchPageService, private activatedRoute: ActivatedRoute, private route: Router) { }
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
       const id = params.get('id') || 'No existe id';
@@ -32,10 +32,8 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.items = this.searchService.searchByTerm(this.search).pipe(map(res => { return res }), catchError((err: HttpErrorResponse) => {
-      this.errorMessage = err;
-      return throwError(err);
-    }));
+  redirectToSearch(search: string) {
+    this.route.navigate(['/'], {queryParams: { search }});
   }
+
 }

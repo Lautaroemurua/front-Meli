@@ -1,4 +1,4 @@
-<app-header [searchType]="'searchPage'"(valueResponse)="getResponse($event)"></app-header>
+<app-header [searchType]="'searchPage'"(termEmit)="getResponse($event)"></app-header>
 <div class="container-item" *ngIf="items">
   <section *ngFor="let item of items">
     <app-list [data]="item"></app-list>

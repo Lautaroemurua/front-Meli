@@ -1,4 +1,4 @@
-<app-header [searchType]="'detailsPage'"></app-header>
+<app-header [searchType]="'detailsPage'"(termEmit)="redirectToSearch($event)"></app-header>
 <ng-container *ngIf="(detalles | async) as obj">
   <div class="detailsContent">
     <div class="detailsContent__details">
