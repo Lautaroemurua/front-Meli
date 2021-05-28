@@ -18,23 +18,18 @@ export class SearchPageComponent implements OnInit{
   ngOnInit() {
     try {
       this.getters();
-      console.log(this.items);
     } catch (error) {
       return error
     }
   }
   getters() {
-    this.searchService.getTerm().subscribe(res => {
-      this.search = res;
-      this.searchService.getItemData().subscribe(res => {
-        this.items = res;
-      })
+    this.searchService.getItemData().subscribe(res => {
+      this.items = res;
     })
   }
 
-  getResponse(response: string) {
-    this.search = response;
-    this.searchItems(this.search);
+  getResponse(response: Item[]) {
+    this.items = response;
   }
 
   searchItems(search: string) {

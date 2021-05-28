@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Item } from '../../models/search-interface';
-import { SearchPageComponent } from '../../search-page.component';
 import { SearchPageService } from '../../services/search-page.service';
 
 @Component({
@@ -10,23 +9,38 @@ import { SearchPageService } from '../../services/search-page.service';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
-  search: string = '';
+export class HeaderComponent implements OnInit {
+  search: string | undefined = '';
   errorMessage: any;
   @Input() searchType: string | undefined;
-  @Output() termEmit = new EventEmitter<string>();
+  @Output() termEmit = new EventEmitter<Item[]>();
   
   constructor(private searchService: SearchPageService, private router: Router) { }
+  ngOnInit(): void {
+    this.searchService.getTerm().subscribe(res => {
+      this.search = res;
+    })
+  }
+
+  searchByTerm(term: string) {
+    this.searchService.searchByTerm(term)
+  }
+
   onSubmit() {
-    this.searchService.setTerm(this.search);
+    const url = this.router.url;
     this.searchService.searchByTerm(this.search).subscribe(res => {
-      this.searchService.setItemData(res)
-      this.router.navigate(['/']);
+      this.searchService.setTerm(this.search);
+      if (url === '/') {
+        this.emitValue(res);
+      } else {
+        this.searchService.setItemData(res)
+        this.router.navigate(['/']);
+      }
     })
   }
   
-  emitValue(val: string) {
-    this.termEmit.emit(val);
+  emitValue(items: Item[]) {
+    this.termEmit.emit(items);
   }
 
 }

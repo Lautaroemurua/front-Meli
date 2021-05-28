@@ -38,7 +38,7 @@ export class SearchPageService {
     return of(this.itemData);
   }
 
-  setTerm(term: string) {
+  setTerm(term: string | undefined) {
     this.term = term;
   }
 

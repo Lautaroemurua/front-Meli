@@ -32,8 +32,4 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  redirectToSearch(search: string) {
-    this.route.navigate(['/'], {queryParams: { search }});
-  }
-
 }
